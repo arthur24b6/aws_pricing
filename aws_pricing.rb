@@ -43,15 +43,17 @@ end
 
 parser.parse!
 
-
 region = AWSCosts.region @region
 
-base = 0
-@instances.each do |i|
-  base = base + region.ec2.on_demand(:linux).price(i)
+if ! @instances.empty?
+  base = 0
+  @instances.each do |i|
+    base = base + region.ec2.on_demand(:linux).price(i)
+  end
+
+  puts base * @hours * @number
+else
+  puts region.ec2.on_demand(:linux).price().to_yaml.gsub(/---\n/m, '');
 end
-
-puts base * @hours * @number
-
 
 
