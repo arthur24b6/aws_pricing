@@ -1,0 +1,21 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    awscosts (0.0.12)
+      httparty (~> 0.11.0)
+      oj (~> 2.1)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
+    multi_json (1.12.1)
+    multi_xml (0.6.0)
+    oj (2.18.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  awscosts
+
+BUNDLED WITH
+   1.14.6
